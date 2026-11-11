@@ -6,9 +6,10 @@
 
 ## 安裝與啟動
 
-在此 App 資料夾執行，本機授課 Python 3.14（本次實測 3.14.0）：
+本專案資料夾名稱含空格，因此所有路徑必須使用引號或在專案目錄中執行。Windows 範例：
 
 ```powershell
+cd "Midterm Mini-Project"
 py -3.14 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
@@ -17,10 +18,16 @@ Copy-Item .env.example .env
 python -m streamlit run app.py
 ```
 
+如果你在專案外部啟動，也可直接執行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ".\Midterm Mini-Project\run_streamlit.ps1"
+```
+
 macOS / Linux 使用 `python3.14 -m venv .venv`、`source .venv/bin/activate`、`cp .env.example .env`，其他指令相同。
 `.env` 填入自己的 API key；Secrets > 環境變數（包含 .env，既有環境變數優先）。
 缺少 Secrets 檔會回退至環境變數，設定內容不可顯示在畫面或截圖。
-從課程根目錄啟動可用 `python -m streamlit run week08/week08_midterm_simple_starter/app.py`。
+注意：若直接在終端機輸入 `pip install -r Midterm Mini-Project/requirements.txt`，會因路徑含空白而失敗，必須用引號或先 `cd` 進資料夾。
 
 ## 操作與資料流
 
